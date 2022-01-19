@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<p id="ad"></p>
+<canvas id="HCN" width="300" height="200" style="border: 1px solid" />
+
+<script>
+    let Rectangle = function (CD,CR){
+        this.CD=CD;
+        this.CR=CR;
+        this.getCD=function (){
+            return CD;
+        }
+        this.getCR =function (){
+            return CR ;
+        }
+        this.getDT=function (){
+            return CD*CR ;
+        }
+        this.getCV=function (){
+            return (CD+CR)*2;
+        }
+    }
+    let rectangle=new Rectangle(50,40);
+    let chieudai=rectangle.getCD();
+    let chieurong=rectangle.getCR();
+    let chuvi=rectangle.getCV();
+    let dientich=rectangle.getDT();
+    document.getElementById("ad").innerText="Chu vi HCN là :"+chuvi+" "+"Diện tích HCN là:"+dientich;
+    function createHCN(){
+        let ctx=document.getElementById("HCN").getContext("2d");
+        ctx.fillRect(100,100,rectangle.CD,rectangle.CR)
+    }
+    createHCN();
+</script>
+</body>
+</html>
